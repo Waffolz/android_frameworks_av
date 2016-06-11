@@ -481,7 +481,7 @@ bool AudioPolicyService::isStreamActive(audio_stream_type_t stream, uint32_t inP
 
 bool AudioPolicyService::isStreamActiveRemotely(audio_stream_type_t stream, uint32_t inPastMs) const
 {
-/*#ifndef ICS_AUDIO_BLOB
+#ifndef ICS_AUDIO_BLOB
     if (uint32_t(stream) >= AUDIO_STREAM_CNT) {
         return BAD_VALUE;
     }
@@ -490,7 +490,7 @@ bool AudioPolicyService::isStreamActiveRemotely(audio_stream_type_t stream, uint
     }
     Mutex::Autolock _l(mLock);
     return mpAudioPolicy->is_stream_active_remotely(mpAudioPolicy, stream, inPastMs);
-#endif*/
+#endif
     return 0;
 }
 
